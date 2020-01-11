@@ -1161,6 +1161,32 @@ const countryList = [
   }
 ]
 
+const monthList = [
+  {"name": "January",
+    "number": "01"},
+    {"name": "Feburary",
+    "number": "02"},
+    {"name": "March",
+    "number": "01"},
+    {"name": "April",
+    "number": "01"},
+    {"name": "May",
+    "number": "01"},
+    {"name": "June",
+    "number": "01"},
+    {"name": "July",
+    "number": "01"},
+    {"name": "August",
+    "number": "01"},
+    {"name": "September",
+    "number": "01"},
+    {"name": "October",
+    "number": "01"},
+    {"name": "November",
+    "number": "01"},
+    {"name": "December",
+    "number": "01"},
+]
 
 let dropdown = $("<select>");
 
@@ -1168,5 +1194,14 @@ for (let i = 0; i < countryList.length; i++) {
 let countryName = $(`<option>${countryList[i].name}<option>`);
 countryName.attr("value", countryList[i].name)
 $(dropdown).append(countryName);
-$("").append(dropdown)
+$(".testDropdown").append(dropdown)
 }
+
+let monthDropdown = $("<select>")
+for (let i = 0; i < monthList.length; i++) {
+  let monthsName = $(`<option>${monthList[i].name}<option>`);
+monthsName.attr("value", monthList[i].name)
+$(monthDropdown).append(monthsName);
+$(".testDropdown2").append(monthDropdown)
+}
+console.log(monthList)

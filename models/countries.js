@@ -7,8 +7,9 @@ module.exports = function (sequelize, DataTypes) {
         cCode: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        }, 
+            
     });
 
-      return Countries
+return Countries
 }

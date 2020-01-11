@@ -13,6 +13,9 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+// Set Handlebars as the default templating engine. main is linking to the document under views. its boilerplate
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Set Handlebars as the default templating engine. main is linking to the document under views. its boilerplate

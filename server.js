@@ -9,12 +9,12 @@ var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
-// Set Handlebars as the default templating engine. main is linking to the document under views. its boilerplate
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+// Set Handlebars as the default templating engine. main is linking to the document under views. its boilerplate
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));

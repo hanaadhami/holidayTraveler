@@ -1167,41 +1167,73 @@ const monthList = [
     {"name": "Feburary",
     "number": "02"},
     {"name": "March",
-    "number": "01"},
+    "number": "03"},
     {"name": "April",
-    "number": "01"},
+    "number": "04"},
     {"name": "May",
-    "number": "01"},
+    "number": "05"},
     {"name": "June",
-    "number": "01"},
+    "number": "06"},
     {"name": "July",
-    "number": "01"},
+    "number": "07"},
     {"name": "August",
-    "number": "01"},
+    "number": "08"},
     {"name": "September",
-    "number": "01"},
+    "number": "09"},
     {"name": "October",
-    "number": "01"},
+    "number": "10"},
     {"name": "November",
-    "number": "01"},
+    "number": "11"},
     {"name": "December",
-    "number": "01"},
+    "number": "12"},
 ]
 
 let dropdown = $("<select>");
+$(dropdown).attr("class", "countryDropdown");
+
+let monthDropdown = $("<select>");
+$(monthDropdown).attr("class", "monthDropdown")
 
 for (let i = 0; i < countryList.length; i++) {
 let countryName = $(`<option>${countryList[i].name}<option>`);
-countryName.attr("value", countryList[i].name)
+countryName.attr("countryName", countryList[i].name)
+countryName.attr("countryCode", countryList[i].code)
 $(dropdown).append(countryName);
 $(".testDropdown").append(dropdown)
 }
 
-let monthDropdown = $("<select>")
+
 for (let i = 0; i < monthList.length; i++) {
   let monthsName = $(`<option>${monthList[i].name}<option>`);
-monthsName.attr("value", monthList[i].name)
+monthsName.attr("monthNum", monthList[i].number)
 $(monthDropdown).append(monthsName);
 $(".testDropdown2").append(monthDropdown)
 }
-console.log(monthList)
+
+
+
+
+
+
+
+
+
+$(".clicker").on("click", function() { 
+  
+  $.each($(".countryDropdown option:selected"), function(){            
+    let countryCode = $(this).attr("countryCode");
+
+
+
+  $.each($(".monthDropdown option:selected"), function(){            
+    let monthNum = $(this).attr("monthNum");
+
+
+
+
+    $.get(`/holidays?countryCode=${countryCode}&month=${monthNum}`).then(function(response) {
+      console.log(response);
+    });
+  })
+});
+});

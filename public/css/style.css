@@ -8,11 +8,13 @@ body {
   font-family: "Raleway", Arial, sans-serif;
   line-height: 1.6;
   font-size: 26px;
-  background: #121212;
-  color: plum;
   font-weight: 300;
   overflow-x: hidden;
 }
+.userchoices {
+  color: black;
+}
+
 .fh5co-cover,
 .fh5co-hero {
   position: relative;
@@ -152,7 +154,7 @@ body {
   }
 }
 #fh5co-logo a {
-  color: red;
+  color: white;
 }
 #fh5co-logo a:hover,
 #fh5co-logo a:focus {

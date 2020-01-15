@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Holiday Traveler</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="" />
@@ -18,7 +19,6 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    >
     <link rel="stylesheet" href="css/superfish.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -35,6 +35,7 @@
                     <div class="container">
                         <div class="nav-header">
                             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                            <a class="navbar-brand" href="/logout">Logout</a>
                             <h1 id="fh5co-logo"><a href="index.html">Holiday Traveler</a></h1>
                             <!-- START #fh5co-menu-wrap -->
                             <nav id="fh5co-menu-wrap" role="navigation">
@@ -56,22 +57,21 @@
                     <div class="desc animate-box">
                         <h2>TRAVEL AROUND THE WORLD</h2>
 
-                        <select class="custom-select">
-                            <option selected>Select Country</option>
+                        <select class="custom-select" style="color: black;">
+                            <option  selected>Select Country</option >
                             <option value="1">{{ country }}</option>
                           </select>
-
-                          <select class="custom-select">
-                            <option selected>Select Month of Travel</option>
+                          <select class="custom-select" style="color: black;">
+                            <option selected >Select Month of Travel</option>
                             <option value="1">{{ country }}</option>
                           </select>
 
                         <span><a class="btn btn-primary btn-lg" href="#">Search for Holidays</a></span>
                     </div>
-                    
                 </div>
-
             </div>
+            {{ body }}
+
             <script src="js/jquery.min.js"></script>
             <!-- jQuery Easing -->
             <script src="js/jquery.easing.1.3.js"></script>

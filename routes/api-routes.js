@@ -33,13 +33,13 @@ module.exports = function(app) {
         res.redirect("/");
     });
 
-    app.get("/holidays", function(req, res) {
-        const queryURL = `https://calendarific.com/api/v2/holidays?api_key=62141ee544feb21b953c4652fb6249c92c37458e&year=2020&country=${req.query.countryCode}&month=${req.query.month}`
+    app.get("/holidays/:countryCode/:month", function(req, res) {
+        const queryURL = `https://calendarific.com/api/v2/holidays?api_key=62141ee544feb21b953c4652fb6249c92c37458e&year=2020&country=${req.params.countryCode}&month=${req.params.month}`
 
         axios.get(queryURL)
             .then(response => {
                 // console.log('~~~~~~~~~~~~', queryURL, response.data.response.holidays);
-                res.render("index", {holidays: response.data.response.holidays})
+                res.render("countryDetails", {holidays: response.data.response.holidays})
             })
     });
 

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "development": {
     "username": "root",
     "password": "yulia",
@@ -21,3 +22,29 @@
     "dialect": "mysql"
   }
 }
+=======
+    "development": {
+        "username": "root",
+        "password": "Hou9ston!",
+        "database": "passport_demo",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "qchnboc1srfmwduy",
+        "password": "p7xnedhyd4qg6jw3",
+        "database": "rccsuy2rpz814uco",
+        "host": "nba02whlntki5w2p.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "dialect": "mysql",
+        "use_env_variable": "JAWSDB_URL"
+
+    }
+}
+>>>>>>> ed5239aa789e136f54311d1142f548a4d7f8a077

@@ -2,6 +2,7 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+<<<<<<< HEAD
 body {
   font-family: "Raleway", Arial, sans-serif;
   line-height: 1.6;
@@ -20,3 +21,5 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 5%;
 }
+=======
+>>>>>>> 0b3d3d9acca3e80ef416926352faa9d717e66055

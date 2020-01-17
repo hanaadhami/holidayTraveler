@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var axios = require("axios");
 
 module.exports = function(app) {
     // Using the passport.authenticate middleware with our local strategy.
@@ -30,6 +31,16 @@ module.exports = function(app) {
     app.get("/logout", function(req, res) {
         req.logout();
         res.redirect("/");
+    });
+
+    app.get("/holidays/:countryCode/:month", function(req, res) {
+        const queryURL = `https://calendarific.com/api/v2/holidays?api_key=62141ee544feb21b953c4652fb6249c92c37458e&year=2020&country=${req.params.countryCode}&month=${req.params.month}`
+
+        axios.get(queryURL)
+            .then(response => {
+                // console.log('~~~~~~~~~~~~', queryURL, response.data.response.holidays);
+                res.render("countryDetails", {holidays: response.data.response.holidays})
+            })
     });
 
     // Route for getting some data about our user to be used client side

@@ -8,13 +8,11 @@ body {
   font-family: "Raleway", Arial, sans-serif;
   line-height: 1.6;
   font-size: 26px;
+  background: #121212;
+  color: plum;
   font-weight: 300;
   overflow-x: hidden;
 }
-.userchoices {
-  color: black;
-}
-
 .fh5co-cover,
 .fh5co-hero {
   position: relative;
@@ -57,7 +55,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -71,7 +69,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover_2 {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -153,9 +151,8 @@ body {
     text-align: center;
   }
 }
-
 #fh5co-logo a {
-  color: white;
+  color: red;
 }
 #fh5co-logo a:hover,
 #fh5co-logo a:focus {
@@ -174,7 +171,6 @@ body {
 #fh5co-primary-menu > li > .sf-with-ul:after {
   border: none !important;
   font-family: "icomoon";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

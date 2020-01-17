@@ -12,6 +12,8 @@ var app = express();
 // Set Handlebars as the default templating engine. main is linking to the document under views. its boilerplate
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

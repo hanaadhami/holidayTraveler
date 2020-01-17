@@ -14,11 +14,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         month: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         monthName: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
 
 

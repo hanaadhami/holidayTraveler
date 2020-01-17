@@ -43,6 +43,20 @@ module.exports = function(app) {
             })
     });
 
+    
+      app.post("/holidays/:countryName", function(req, res) {
+        db.Trips.create({
+                cName: req.params.countryName,
+                email: req.body.email
+            })
+            .then(function() {
+                res.redirect(307, "/countryDetails");
+            })
+            .catch(function(err) {
+                res.status(401).json(err);
+            });
+    });
+
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function(req, res) {
         if (!req.user) {

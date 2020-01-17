@@ -1,3 +1,12 @@
+$(document).ready(function(){
+  $('.scrollspy').scrollSpy();
+});
+
+$(document).ready(function () {
+  $('.collapsible').collapsible();
+});
+
+
 const countryList = [
   {
     "name": "Afghanistan",
@@ -1212,6 +1221,9 @@ const monthList = [
   },
 ]
 
+
+
+
 let dropdown = $("<select>");
 $(dropdown).attr("class", "countryDropdown custom-select");
 $(dropdown).attr("style", "color: black;");
@@ -1220,12 +1232,10 @@ let monthDropdown = $("<select>");
 $(monthDropdown).attr("class", "monthDropdown custom-select")
 $(monthDropdown).attr("style", "color: black;");
 
+
 for (let i = 0; i < countryList.length; i++) {
-  let countryName = $(`<option>${countryList[i].name}<option>`);
-  countryName.attr("countryName", countryList[i].name)
-  countryName.attr("countryCode", countryList[i].code)
+  let countryName = $(`<option countryCode='${countryList[i].code}' value='${countryList[i].name}'>${countryList[i].name}<option>`);
   $(dropdown).append(countryName);
-  $(".testDropdown").append(dropdown)
 }
 
 
@@ -1233,9 +1243,9 @@ for (let i = 0; i < monthList.length; i++) {
   let monthsName = $(`<option>${monthList[i].name}<option>`);
   monthsName.attr("monthNum", monthList[i].number)
   $(monthDropdown).append(monthsName);
-  $(".testDropdown2").append(monthDropdown)
 }
-
+$(".testDropdown").append(dropdown)
+$(".testDropdown2").append(monthDropdown)
 
 
 
@@ -1248,6 +1258,8 @@ $(".clicker").on("click", function () {
 
   $.each($(".countryDropdown option:selected"), function () {
     let countryCode = $(this).attr("countryCode");
+    let countryName = $(this).attr("value");
+    console.log(countryName)
 
 
 
@@ -1256,11 +1268,14 @@ $(".clicker").on("click", function () {
 
 
 
-      window.location.pathname = `/holidays/${countryCode}/${monthNum}`
+       window.location.pathname = `/holidays/${countryCode}/${monthNum}`
 
       // $.get(`/holidays?countryCode=${countryCode}&month=${monthNum}`).then(function (response) {
       //   console.log(response);
       // });
+      $.post(`/holidays/${countryName}`).then(function(response) {
+        console.log(response)
+      })
     })
   });
 });

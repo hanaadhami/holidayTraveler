@@ -44,17 +44,14 @@ module.exports = function(app) {
     });
 
     
-      app.post("/holidays/:countryName", function(req, res) {
+      app.post("/holidays/:countryCode/:month", function(req, res) {
         db.Trips.create({
-                cName: req.params.countryName,
+                cName: req.params.countryCode,
                 email: req.body.email
             })
-            .then(function() {
-                res.redirect(307, "/countryDetails");
+            .then(function(dbTrips) {
+                res.redirect(dbTrips);
             })
-            .catch(function(err) {
-                res.status(401).json(err);
-            });
     });
 
     // Route for getting some data about our user to be used client side

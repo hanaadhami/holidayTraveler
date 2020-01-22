@@ -34,25 +34,16 @@ module.exports = function(app) {
     });
 
     app.get("/holidays/:countryCode/:month", function(req, res) {
-        const queryURL = `https://calendarific.com/api/v2/holidays?api_key=62141ee544feb21b953c4652fb6249c92c37458e&year=2020&country=${req.params.countryCode}&month=${req.params.month}`
+        const queryURL = `https://calendarific.com/api/v2/holidays?api_key=c2647432e45020469a52b992b73ff841615b0efe&year=2020&country=${req.params.countryCode}&month=${req.params.month}`
 
         axios.get(queryURL)
             .then(response => {
-                // console.log('~~~~~~~~~~~~', queryURL, response.data.response.holidays);
                 res.render("countryDetails", {holidays: response.data.response.holidays})
             })
     });
 
     
-      app.post("/holidays/:countryCode/:month", function(req, res) {
-        db.Trips.create({
-                cName: req.params.countryCode,
-                email: req.body.email
-            })
-            .then(function(dbTrips) {
-                res.redirect(dbTrips);
-            })
-    });
+      
 
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function(req, res) {

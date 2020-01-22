@@ -1764,12 +1764,8 @@ $(".clicker").on("click", function () {
 
        window.location.pathname = `/holidays/${countryCode}/${monthNum}`
 
-      // $.get(`/holidays?countryCode=${countryCode}&month=${monthNum}`).then(function (response) {
-      //   console.log(response);
-      // });
-      $.post(`/holidays/${countryName}`).then(function(response) {
-        console.log(response)
-      })
+      
+      
     })
   });
 });

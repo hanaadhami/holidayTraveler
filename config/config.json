@@ -25,7 +25,7 @@
 =======
     "development": {
         "username": "root",
-        "password": "Hou9ston!",
+        "password": "Sinajoon12",
         "database": "passport_demo",
         "host": "127.0.0.1",
         "dialect": "mysql"
@@ -44,7 +44,6 @@
         "host": "nba02whlntki5w2p.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql",
         "use_env_variable": "JAWSDB_URL"
-
     }
 }
 >>>>>>> ed5239aa789e136f54311d1142f548a4d7f8a077

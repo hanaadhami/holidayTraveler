@@ -16,7 +16,7 @@ body {
 .fh5co-cover,
 .fh5co-hero {
   position: relative;
-  height: 800px;
+  height: 1000px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover,
